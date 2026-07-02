@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Study Material – Class 8 to 12 | Rohit General Studies</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --navy:#0B1F3F;
+      --link:#C81E2C;
+    }
+
+    .dl-link{
+      color:inherit;
+      text-decoration:underline;
+      text-decoration-color:rgba(200,30,44,.6);
+      text-underline-offset:2px;
+    }
+
+    .dl-link:hover{color:var(--navy-deep);}
+
+    .dl-link:focus{outline:3px solid rgba(242,183,5,.6);outline-offset:3px;}
+
+    :root{ 
+      --navy:#0B1F3F;
+      --navy-deep:#071730;
+      --gold:#F2B705;
+      --gold-soft:#FFD75E;
+      --red:#C81E2C;
+      --cream:#FAF6EC;
+      --paper:#FFFCF5;
+      --cork:#9C6B3E;
+      --ink:#1B2433;
+      --line:rgba(11,31,63,0.12);
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{
+      font-family:'Inter',sans-serif;
+      background:var(--cream);
+      color:var(--ink);
+      overflow-x:hidden;
+    }
+    a{text-decoration:none;color:inherit;}
+    img{max-width:100%;display:block;}
+
+    h1,h2,h3{font-family:'Archivo Black',sans-serif;}
+
+    /* Header */
+    header{
+      background:linear-gradient(180deg,var(--navy-deep),var(--navy) 70%);
+      color:#fff;
+      position:sticky;
+      top:0;
+      z-index:100;
+      box-shadow:0 2px 18px rgba(0,0,0,.25);
+    }
+    .topbar{
+      max-width:1240px;
+      margin:0 auto;
+      padding:14px 24px;
+      display:flex;
+      align-items:center;
+      gap:18px;
+    }
+    .logo-wrap{
+      width:58px;height:58px;border-radius:50%;
+      flex-shrink:0;
+      border:2px solid var(--gold);
+      overflow:hidden;
+      background:#fff;
+    }
+    .logo-wrap img{width:100%;height:100%;object-fit:cover;}
+    .brand-name{
+      font-family:'Archivo Black',sans-serif;
+      font-size:clamp(1.25rem,3vw,1.9rem);
+      line-height:1.05;
+      letter-spacing:.01em;
+    }
+    .brand-name span{color:var(--gold);}
+    .brand-sub{
+      font-family:'Caveat',cursive;
+      font-weight:700;
+      color:#9fd8e0;
+      font-size:1rem;
+      margin-top:2px;
+    }
+    nav.desktop-nav{
+      margin-left:auto;
+      display:flex;
+      gap:28px;
+      font-weight:600;
+      font-size:.92rem;
+    }
+    nav.desktop-nav a{position:relative;padding:4px 0;opacity:.92;}
+    nav.desktop-nav a::after{
+      content:"";
+      position:absolute;left:0;bottom:-4px;
+      width:0%;height:2px;background:var(--gold);
+      transition:width .25s ease;
+    }
+    nav.desktop-nav a:hover::after{width:100%;}
+
+    .cta-btn{
+      background:var(--gold);
+      color:var(--navy-deep);
+      font-weight:900;
+      padding:9px 18px;
+      border-radius:30px;
+      font-size:.85rem;
+      white-space:nowrap;
+      box-shadow:0 4px 0 #b58300;
+      margin-left:6px;
+    }
+
+    .tagline-strip{
+      background:var(--gold);
+      color:var(--navy-deep);
+      overflow:hidden;
+      white-space:nowrap;
+      border-top:1px solid rgba(0,0,0,.08);
+      border-bottom:2px solid var(--navy-deep);
+    }
+    .tagline-track{
+      display:inline-block;
+      padding-left:100%;
+      animation:scrollLeftRight 44s linear infinite;
+      font-weight:700;
+      font-size:.85rem;
+      letter-spacing:.03em;
+      padding-top:6px;padding-bottom:6px;
+    }
+    .tagline-track span{margin:0 28px;}
+    @keyframes scrollLeftRight{
+      0%{transform:translateX(0);}
+      100%{transform:translateX(-100%);}
+    }
+
+    /* Page */
+    .page-wrap{max-width:1240px;margin:0 auto;padding:18px 24px 70px;}
+
+    .hero{
+      margin-top:14px;
+      background:linear-gradient(160deg,rgba(7,23,48,.98),rgba(11,31,63,.92));
+      border:1px solid rgba(11,31,63,.15);
+      border-radius:22px;
+      padding:26px 22px;
+      color:#fff;
+      position:relative;
+      overflow:hidden;
+      box-shadow:0 12px 34px rgba(11,31,63,.10);
+    }
+    .hero::before{
+      content:"";
+      position:absolute;inset:0;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(242,183,5,.35), transparent 45%),
+        repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px, transparent 1px 28px);
+      pointer-events:none;
+    }
+    .hero-inner{position:relative;display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;}
+    .hero h1{font-size:clamp(1.9rem,4.2vw,2.6rem);line-height:1.08;margin-bottom:10px;}
+    .hero p{color:#cfd9ec;line-height:1.7;font-size:1rem;max-width:650px;}
+
+    .pill-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;}
+    .pill{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.16);
+      padding:9px 12px;
+      border-radius:999px;
+      font-weight:800;
+      font-size:.85rem;
+    }
+
+    .hero-right{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:16px;}
+    .hero-right h3{font-size:1.05rem;margin-bottom:8px;}
+    .hero-right .mini{color:#cfd9ec;line-height:1.65;font-size:.95rem;}
+
+    /* Tabs */
+    .tabs{
+      margin-top:18px;
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow:0 10px 26px rgba(11,31,63,.05);
+    }
+    .tabbar{display:flex;gap:10px;flex-wrap:wrap;padding:14px 14px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,rgba(242,183,5,.15),transparent);}
+    .tabbtn{
+      border:1px solid var(--line);
+      background:#fff;
+      padding:10px 12px;
+      border-radius:14px;
+      cursor:pointer;
+      font-weight:900;
+      color:var(--navy-deep);
+      font-size:.92rem;
+      display:flex;align-items:center;gap:10px;
+      transition:transform .15s ease, background .15s ease;
+    }
+    .tabbtn:hover{transform:translateY(-2px);}
+    .tabbtn[aria-selected="true"]{background:var(--gold-soft);border-color:rgba(242,183,5,.6);}
+
+    .tabpanel{padding:18px 14px;}
+
+    /* Content cards grid */
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;}
+    .card{
+      grid-column:span 6;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:16px;
+      box-shadow:0 8px 18px rgba(11,31,63,.05);
+      min-width:0;
+    }
+    .card a{word-break:break-word;}
+    .card h3{word-break:break-word;}
+    .card h3{color:var(--navy-deep);font-size:1.15rem;margin-bottom:10px;}
+    .meta{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px;}
+    .tag{background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:7px 10px;font-weight:800;font-size:.82rem;color:var(--navy-deep);}
+    .list{display:flex;flex-direction:column;gap:8px;margin-top:6px;}
+    .item{display:flex;gap:10px;align-items:flex-start;}
+    .check{width:22px;height:22px;border-radius:8px;background:rgba(242,183,5,.2);border:1px solid rgba(242,183,5,.45);display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--red);font-size:.8rem;flex-shrink:0;margin-top:1px;}
+    .item span{line-height:1.55;color:#5a6478;font-size:.95rem;}
+
+    /* Meet */
+    .meet{
+      grid-column:span 12;
+      background:linear-gradient(160deg,rgba(7,23,48,.98),rgba(11,31,63,.92));
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:18px;
+      padding:18px;
+      color:#fff;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+    .meet h3{font-size:1.25rem;margin-bottom:6px;}
+    .meet p{color:#cfd9ec;line-height:1.65;font-size:.95rem;}
+    .meet-embed{border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.15);background:#fff;}
+    .meet-embed iframe{width:100%;height:240px;border:0;display:block;}
+
+    .btnrow{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px;}
+    .btn{
+      border-radius:12px;
+      padding:11px 14px;
+      font-weight:900;
+      cursor:pointer;
+      display:inline-flex;align-items:center;gap:10px;
+      border:0;
+      font-size:.95rem;
+    }
+    .btn-primary{background:var(--gold);color:var(--navy-deep);box-shadow:0 5px 0 #b58300;}
+    .btn-ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.35);}
+
+    /* Download / Request */
+    .formcard{
+      grid-column:span 12;
+      background:rgba(255,255,255,.9);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px;
+      box-shadow:0 10px 26px rgba(11,31,63,.05);
+    }
+    .formgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+    .field label{display:block;font-weight:900;color:var(--navy-deep);font-size:.9rem;margin:2px 0 6px;}
+    .field input,.field textarea{width:100%;padding:12px;border-radius:12px;border:1px solid var(--line);background:#fff;font-size:.95rem;outline:none;}
+    .field textarea{min-height:110px;resize:vertical;}
+    .form-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:12px;}
+    .hint{color:#5a6478;line-height:1.6;font-size:.92rem;}
+
+    /* Footer */
+    footer{
+      background:var(--navy-deep);
+      color:#cfd9ec;
+      padding:56px 24px 30px;
+    }
+    .footer-grid{
+      max-width:1240px;margin:0 auto;
+      display:grid;
+      grid-template-columns:1.1fr 1fr 1fr 1.3fr;
+      gap:36px;
+      padding-bottom:26px;
+      border-bottom:1px solid rgba(255,255,255,.1);
+    }
+    .footer-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+    .footer-brand img{width:50px;height:50px;border-radius:50%;border:2px solid var(--gold);}
+    .footer-brand b{font-family:'Archivo Black';font-size:1.05rem;color:#fff;}
+    footer p.about{font-size:.86rem;line-height:1.6;color:#9fb0d1;}
+    footer h4{color:#fff;font-size:.92rem;letter-spacing:.04em;text-transform:uppercase;margin-bottom:16px;}
+    footer ul li{margin-bottom:10px;font-size:.86rem;}
+    footer ul li a:hover{color:var(--gold);}
+    .contact-line{display:flex;gap:10px;margin-bottom:14px;font-size:.86rem;align-items:flex-start;}
+    .contact-line .ic{color:var(--gold);font-size:1rem;margin-top:2px;}
+    .map-box{border-radius:12px;overflow:hidden;border:2px solid rgba(255,255,255,.12);margin-top:8px;}
+    .map-box iframe{width:100%;height:170px;border:0;display:block;filter:grayscale(.15) contrast(1.05);}
+    .footer-bottom{max-width:1240px;margin:0 auto;padding:20px 0 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.78rem;color:#8194b8;}
+    .footer-bottom b{color:var(--gold);}
+
+    @media(max-width:980px){
+      .hero-inner{grid-template-columns:1fr;}
+      nav.desktop-nav{gap:18px;font-size:.86rem;}
+      .card{grid-column:span 12;}
+      .meet{grid-column:span 12;grid-template-columns:1fr;}
+      .formgrid{grid-template-columns:1fr;}
+      .footer-grid{grid-template-columns:1fr 1fr;}
+    }
+    .mobile-menu-btn{display:none;margin-left:auto;width:44px;height:44px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08);border-radius:12px;cursor:pointer;position:relative;}
+    .mobile-menu-btn span{position:absolute;left:11px;right:11px;height:3px;background:var(--gold);border-radius:4px;transition:transform .2s ease, top .2s ease, opacity .2s ease;}
+    .mobile-menu-btn span:nth-child(1){top:14px;}
+    .mobile-menu-btn span:nth-child(2){top:20px;}
+    .mobile-menu-btn span:nth-child(3){top:26px;}
+
+    .mobile-menu{display:none;position:absolute;top:82px;left:0;right:0;background:rgba(7,23,48,.98);border-top:1px solid rgba(255,255,255,.18);padding:12px 18px 18px;z-index:120;box-shadow:0 10px 30px rgba(0,0,0,.25);}
+    .mobile-menu.open{display:block;}
+    .mobile-menu a{display:block;padding:12px 10px;border-radius:12px;font-weight:800;color:#fff;border:1px solid transparent;text-transform:lowercase;}
+    .mobile-menu a:hover{border-color:rgba(242,183,5,.45);background:rgba(242,183,5,.12);}
+
+    @media(max-width:600px){
+      nav.desktop-nav{display:none;}
+      .mobile-menu-btn{display:block;}
+      .topbar{justify-content:space-between;}
+      .footer-grid{grid-template-columns:1fr;}
+      .hero-right{display:none;}
+      .page-wrap{padding:16px 14px 60px;}
+      .grid{gap:12px;}
+      .card{padding:14px 12px;}
+      .card a{word-break:break-word;}
+      .card h3{word-break:break-word;}
+    }
+
+    /* close mobile menu on click outside */
+    @media(min-width:601px){
+      .mobile-menu{display:none;}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="topbar">
+    <div class="logo-wrap"><img src="lobo.png" alt="Rohit General Studies Logo"></div>
+    <div>
+      <div class="brand-name">ROHIT <span>GENERAL</span> STUDIES</div>
+      <div class="brand-sub">Class 8–12 Study Material</div>
+    </div>
+    <nav class="desktop-nav">
+      <a href="about-us.html">About us</a>
+      <a href="index.html#templates">Services</a>
+      <a href="noties.html">Notices</a>
+      <a href="contact.html">Contact</a>
+      <a href="studymaterial.html">Study Material</a>
+    </nav>
+
+    <button class="mobile-menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+       <a href="index.html" class="mobile-menu-link">home </a>
+    <a href="about-us.html" class="mobile-menu-link">About us</a>
+    <a href="#templates" class="mobile-menu-link">servicess</a>
+    <a href="noties.html" class="mobile-menu-link">Notices</a>
+    <a href="contact.html" class="mobile-menu-link">Contact</a>
+    <a href="studymaterial.html" class="mobile-menu-link">study material</a>
+  </div>
+
+  <div class="tagline-strip">
+
+    <div class="tagline-track">
+      <span>★ Class 8–12 ke liye Notes • Books • Imp Questions • PYQ</span>
+      <span>★ Live Google Meet Classes — link update karke chalaya ja sakta hai</span>
+      <span>★ ROHIT GENERAL STUDIES — Paharpur, Purvi Champaran</span>
+    </div>
+  </div>
+</header>
+
+<div class="page-wrap">
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <h1>Study Material Hub (Class 8–12)</h1>
+        <p>
+          Yahan aapko subject-wise <b>Notes</b>, <b>Books/References</b>, <b>Important Questions</b>,
+          aur <b>Previous Year Question (PYQ)</b> ke organized links milenge.
+          Saath hi live Google Meet join karne ka easy process bhi.
+        </p>
+        <div class="pill-row">
+          <div class="pill">✅ Notes</div>
+          <div class="pill">📚 Books</div>
+          <div class="pill">⭐ Imp Questions</div>
+          <div class="pill">📄 PYQ</div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <h3>How to use</h3>
+        <div class="mini">
+          click het to your class and choos your subject and press your button to doenload
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tabs" aria-label="Study material tabs">
+    <div class="tabbar" role="tablist">
+      <button class="tabbtn" role="tab" aria-selected="true" aria-controls="tp-8">🏫 Class 8</button>
+      <button class="tabbtn" role="tab" aria-selected="false" aria-controls="tp-9">🏫 Class 9</button>
+      <button class="tabbtn" role="tab" aria-selected="false" aria-controls="tp-10">🏫 Class 10</button>
+      <button class="tabbtn" role="tab" aria-selected="false" aria-controls="tp-11">🏫 Class 11 (Arts)</button>
+      <button class="tabbtn" role="tab" aria-selected="false" aria-controls="tp-12">🏫 Class 12 (Arts)</button>
+    </div>
+
+        <div class="tabpanel" id="tp-8" role="tabpanel">
+      <div class="grid">
+        <div class="card">
+          <h3>Subject: Science / General Science</h3>
+          <div class="meta">
+            <div class="tag">Notes</div>
+            <div class="tag">Important Qs</div>
+            <div class="tag">PYQ</div>
+          </div>
+          <div class="list">
+            <div class="item"><div class="check">✓</div><span><a href="vishal.pdf" class="dl-link" data-pick="class8_science_notes" style="color:inherit;"><b>Chemistry</b> — Concepts + key points</a></span></div>
+            <div class="item"><div class="check">✓</div><span><a href="vishal.pdf" class="dl-link" data-pick="class8_science_revision" style="color:inherit;"><b>Physics Notes</b> — exams se pehle quick revision</a></span></div>
+            <div class="item"><div class="check">✓</div><span><a href="vishal.pdf" class="dl-link" data-pick="class8_science_imp" style="color:inherit;"><b>Biology</b> — unit-wise expected questions</a></span></div>
+            <div class="item"><div class="check">✓</div><span><a href="vishal.pdf" class="dl-link" data-pick="class8_science_pyq" style="color:inherit;"><b>Math</b> — practice sets</a></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Subject: Maths</h3>
+          <div class="meta">
+            <div class="tag">Notes</div>
+            <div class="tag">Important Qs</div>
+            <div class="tag">PYQ</div>
+          </div>
+          <div class="list">
+            <div class="item"><div class="check">✓</div><span><a href="vishal.pdf" class="dl-link" data-pick="class8_maths_books" style="color:inherit;"><b>Exercise Bank</b> — Topic wise practice</a></span></div>
+            <div class="item"><div class="check">✓</div><span><a href="vishal.pdf" class="dl-link" data-pick="class8_maths_formulas" style="color:inherit;"><b>Formula Sheets</b> — direct revision</a></span></div>
+            <div class="item"><div class="check">✓</div><span><a href="vishal.pdf" class="dl-link" data-pick="class8_maths_imp" style="color:inherit;"><b>Important Qs</b> — exam focus questions</a></span></div>
+            <div class="item"><div class="check">✓</div><span><a href="downloads/class8_maths_practice.pdf" class="dl-link" data-pick="class8_maths_practice" style="color:inherit;"><b>Mixed Practice</b> — speed + accuracy</a></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Subject: Social Science</h3>
+          <div class="meta">
+            <div class="tag">Notes</div>
+            <div class="tag">Important Qs</div>
+            <div class="tag">PYQ</div>
+          </div>
+          <div class="list">
+            <div class="item"><div class="check">✓</div><span><a href="vishal.pdf" class="dl-link" data-pick="class8_social_notes" style="color:inherit;"><b>Concept Notes</b> — easy explanation</a></span></div>
+            <div class="item"><div class="check">✓</div><span><a href="vishal.pdf" class="dl-link" data-pick="class8_social_imp" style="color:inherit;"><b>Important Questions</b> — board focus</a></span></div>
+            <div class="item"><div class="check">✓</div><span><a href="downloads/class8_social_pyq.pdf" class="dl-link" data-pick="class8_social_pyq" style="color:inherit;"><b>Previous Year Qs</b> — practice</a></span></div>
+            <div class="item"><div class="check">✓</div><span><a href="downloads/class8_social_writing.pdf" class="dl-link" data-pick="class8_social_writing" style="color:inherit;"><b>Answer Writing</b> — structured practice</a></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Subject: English</h3>
+          <div class="meta">
+            <div class="tag">Notes</div>
+            <div class="tag">Practice</div>
+            <div class="tag">PYQ</div>
+          </div>
+          <div class="list">
+            <div class="item"><div class="check">✓</div><span><a href="downloads/class8_english_notes.pdf" class="dl-link" data-pick="class8_english_notes" style="color:inherit;"><b>Lesson Notes</b> — comprehension + grammar</a></span></div>
+            <div class="item"><div class="check">✓</div><span><a href="downloads/class8_english_practice.pdf" class="dl-link" data-pick="class8_english_practice" style="color:inherit;"><b>Practice Set</b> — worksheets</a></span></div>
+            <div class="item"><div class="check">✓</div><span><a href="downloads/class8_english_imp.pdf" class="dl-link" data-pick="class8_english_imp" style="color:inherit;"><b>Important Qs</b> — expected questions</a></span></div>
+            <div class="item"><div class="check">✓</div><span><a href="downloads/class8_english_pyq.pdf" class="dl-link" data-pick="class8_english_pyq" style="color:inherit;"><b>PYQ</b> — revision practice</a></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Subject: Hindi</h3>
+          <div class="meta">
+            <div class="tag">Notes</div>
+            <div class="tag">Important Qs</div>
+            <div class="tag">PYQ</div>
+          </div>
+          <div class="list">
+            <div class="item"><div class="check">✓</div><span><a href="downloads/class8_hindi_notes.pdf" class="dl-link" data-pick="class8_hindi_notes" style="color:inherit;"><b>Lesson Notes</b> — अर्थ + अभ्यास</a></span></div>
+            <div class="item"><div class="check">✓</div><span><a href="downloads/class8_hindi_imp.pdf" class="dl-link" data-pick="class8_hindi_imp" style="color:inherit;"><b>Important Questions</b> — exam focus</a></span></div>
+            <div class="item"><div class="check">✓</div><span><a href="downloads/class8_hindi_writing.pdf" class="dl-link" data-pick="class8_hindi_writing" style="color:inherit;"><b>Writing Practice</b> — long/short answers</a></span></div>
+            <div class="item"><div class="check">✓</div><span><a href="downloads/class8_hindi_pyq.pdf" class="dl-link" data-pick="class8_hindi_pyq" style="color:inherit;"><b>Previous Year Qs</b> — practice</a></span></div>
+          </div>
+        </div>
+
+        <div class="meet">
+          <div>
+            <h3>Live Class Join (Google Meet)</h3>
+          <p>
+              Live meet link: admin/update karte hi yahan open ho jayega.
+            </p>
+            <div class="meta" style="margin-top:10px;">
+              <div class="tag">Class Timing: 3:00 PM onwards</div>
+              <div class="tag">For: Class 8–12</div>
+            </div>
+            <div class="btnrow">
+              <a class="btn btn-primary" href="https://meet.google.com/" target="_blank" rel="noopener noreferrer">
+                ▶ Join Live Meet
+              </a>
+              <a class="btn btn-ghost" href="contact.html">
+                📞 Batch / Contact
+              </a>
+            </div>
+            <p style="margin-top:10px;font-size:.9rem;">
+              Note: placeholder meet link use ho raha hai. Final meet code replace karein.
+            </p>
+          </div>
+          <div class="meet-embed" aria-label="Google Meet embed">
+            <iframe
+              src="https://meet.google.com/"
+              title="Google Meet"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="tabpanel" id="tp-9" role="tabpanel" hidden>
+      <div class="grid">
+        <div class="card"><h3>Subject: Maths (Class 9)</h3><div class="meta"><div class="tag">Notes</div><div class="tag">Important Qs</div><div class="tag">PYQ</div></div><div class="list"><div class="item"><div class="check">✓</div><span><a href="downloads/class9_maths_notes.pdf" class="dl-link" data-pick="class9_maths_notes" style="color:inherit;"><b>Chapter-wise Notes</b> — concept clarity</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class9_maths_revision.pdf" class="dl-link" data-pick="class9_maths_revision" style="color:inherit;">
+          <b>Revision Notes</b> — unit test + sets</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class9_maths_imp.pdf" class="dl-link" data-pick="class9_maths_imp" style="color:inherit;"><b>Important Questions</b> — expected</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class9_maths_pyq.pdf" class="dl-link" data-pick="class9_maths_pyq" style="color:inherit;"><b>Previous Year Qs</b> — practice</a></span></div></div></div>
+        <div class="card"><h3>Subject: Science (Class 9)</h3><div class="meta"><div class="tag">Notes</div><div class="tag">Books</div><div class="tag">PYQ</div></div><div class="list"><div class="item"><div class="check">✓</div><span><a href="downloads/class9_science_notes.pdf" class="dl-link" data-pick="class9_science_notes" style="color:inherit;"><b>Concept Notes</b> — diagrams + short theory</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class9_science_revision.pdf" class="dl-link" data-pick="class9_science_revision" style="color:inherit;"><b>Revision Notes</b> — quick answers</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class9_science_imp.pdf" class="dl-link" data-pick="class9_science_imp" style="color:inherit;"><b>Important Questions</b> — exam focus</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class9_science_pyq.pdf" class="dl-link" data-pick="class9_science_pyq" style="color:inherit;"><b>PYQ Sets</b> — practice</a></span></div></div></div>
+
+        <div class="card"><h3>Subject: Hindi (Class 9)</h3><div class="meta"><div class="tag">Notes</div><div class="tag">Important Qs</div><div class="tag">PYQ</div></div><div class="list"><div class="item"><div class="check">✓</div><span><a href="downloads/class9_hindi_notes.pdf" class="dl-link" data-pick="class9_hindi_notes" style="color:inherit;"><b>Lesson Notes</b> — अर्थ + अभ्यास</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class9_hindi_imp.pdf" class="dl-link" data-pick="class9_hindi_imp" style="color:inherit;"><b>Important Questions</b> — exam focus</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class9_hindi_writing.pdf" class="dl-link" data-pick="class9_hindi_writing" style="color:inherit;"><b>Writing Practice</b> — long/short answers</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class9_hindi_pyq.pdf" class="dl-link" data-pick="class9_hindi_pyq" style="color:inherit;"><b>Previous Year Qs</b> — practice</a></span></div></div></div>
+
+        <div class="card"><h3>Subject: English (Class 9)</h3><div class="meta"><div class="tag">Notes</div><div class="tag">Practice</div><div class="tag">PYQ</div></div><div class="list"><div class="item"><div class="check">✓</div><span><a href="downloads/class9_english_notes.pdf" class="dl-link" data-pick="class9_english_notes" style="color:inherit;"><b>Lesson Notes</b> — comprehension + grammar</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class9_english_practice.pdf" class="dl-link" data-pick="class9_english_practice" style="color:inherit;"><b>Practice Set</b> — worksheets</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class9_english_imp.pdf" class="dl-link" data-pick="class9_english_imp" style="color:inherit;"><b>Important Qs</b> — expected questions</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class9_english_pyq.pdf" class="dl-link" data-pick="class9_english_pyq" style="color:inherit;"><b>PYQ</b> — revision practice</a></span></div></div></div>
+
+        <div class="card"><h3>Subject: Computer (Class 9)</h3><div class="meta"><div class="tag">Notes</div><div class="tag">Programs</div><div class="tag">PYQ</div></div><div class="list"><div class="item"><div class="check">✓</div><span><a href="downloads/class9_computer_notes.pdf" class="dl-link" data-pick="class9_computer_notes" style="color:inherit;"><b>Concept Notes</b> — basics + examples</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class9_computer_programs.pdf" class="dl-link" data-pick="class9_computer_programs" style="color:inherit;"><b>Programs</b> — practice code</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class9_computer_imp.pdf" class="dl-link" data-pick="class9_computer_imp" style="color:inherit;"><b>Important Questions</b> — exam focus</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class9_computer_pyq.pdf" class="dl-link" data-pick="class9_computer_pyq" style="color:inherit;"><b>Previous Year Qs</b> — practice</a></span></div></div></div>
+
+        <div class="meet">
+          <div>
+            <h3>Live Class Join (Google Meet)</h3>
+            <p>Same Meet link: embed + button me replace karein.</p>
+            <div class="btnrow">
+              <a class="btn btn-primary" href="https://meet.google.com/" target="_blank" rel="noopener noreferrer">▶ Join Live Meet</a>
+              <a class="btn btn-ghost" href="contact.html">📞 Batch / Contact</a>
+            </div>
+            <p style="margin-top:10px;font-size:.9rem;">Class 9–10 schedule ke liye admin update karega.</p>
+          </div>
+          <div class="meet-embed"><iframe src="https://meet.google.com/" title="Google Meet" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        </div>
+
+
+      </div>
+    </div>
+
+    <div class="tabpanel" id="tp-10" role="tabpanel" hidden>
+      <div class="grid">
+        <div class="card"><h3>Subject: Maths (Class 10)</h3><div class="meta"><div class="tag">Notes</div><div class="tag">Imp Qs</div><div class="tag">PYQ</div></div><div class="list"><div class="item"><div class="check">✓</div><span><a href="downloads/class10_maths_notes.pdf" class="dl-link" data-pick="class10_maths_notes" style="color:inherit;">Board exam oriented short theory</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class10_maths_practice.pdf" class="dl-link" data-pick="class10_maths_practice" style="color:inherit;">Chapter-wise practice sets</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class10_maths_imp.pdf" class="dl-link" data-pick="class10_maths_imp" style="color:inherit;">Important questions + marking pattern</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class10_maths_pyq.pdf" class="dl-link" data-pick="class10_maths_pyq" style="color:inherit;">PYQ for revision</a></span></div></div></div>
+        <div class="card"><h3>Subject: Science + Social (Class 10)</h3><div class="meta"><div class="tag">Books</div><div class="tag">Notes</div><div class="tag">PYQ</div></div><div class="list"><div class="item"><div class="check">✓</div><span><a href="downloads/class10_science_social_books.pdf" class="dl-link" data-pick="class10_science_social_books" style="color:inherit;">Concept + diagrams + answer writing practice</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class10_science_social_imp.pdf" class="dl-link" data-pick="class10_science_social_imp" style="color:inherit;">Unit-wise important questions</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class10_science_social_pyq.pdf" class="dl-link" data-pick="class10_science_social_pyq" style="color:inherit;">Previous year question sets</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class10_science_social_practice.pdf" class="dl-link" data-pick="class10_science_social_practice" style="color:inherit;">Weekly doubt clearing plan</a></span></div></div></div>
+
+        <div class="card"><h3>Subject: Hindi (Class 10)</h3><div class="meta"><div class="tag">Notes</div><div class="tag">Important Qs</div><div class="tag">PYQ</div></div><div class="list"><div class="item"><div class="check">✓</div><span><a href="downloads/class10_hindi_notes.pdf" class="dl-link" data-pick="class10_hindi_notes" style="color:inherit;">Lesson Notes — meaning + practice</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class10_hindi_imp.pdf" class="dl-link" data-pick="class10_hindi_imp" style="color:inherit;">Important Questions — exam focus</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class10_hindi_writing.pdf" class="dl-link" data-pick="class10_hindi_writing" style="color:inherit;">Writing Practice — long/short answers</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class10_hindi_pyq.pdf" class="dl-link" data-pick="class10_hindi_pyq" style="color:inherit;">Previous Year Qs — practice</a></span></div></div></div>
+
+        <div class="card"><h3>Subject: English (Class 10)</h3><div class="meta"><div class="tag">Notes</div><div class="tag">Practice</div><div class="tag">PYQ</div></div><div class="list"><div class="item"><div class="check">✓</div><span><a href="downloads/class10_english_notes.pdf" class="dl-link" data-pick="class10_english_notes" style="color:inherit;">Lesson Notes — comprehension + grammar</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class10_english_practice.pdf" class="dl-link" data-pick="class10_english_practice" style="color:inherit;">Practice Set — worksheets</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class10_english_imp.pdf" class="dl-link" data-pick="class10_english_imp" style="color:inherit;">Important Qs — expected questions</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class10_english_pyq.pdf" class="dl-link" data-pick="class10_english_pyq" style="color:inherit;">PYQ — revision practice</a></span></div></div></div>
+
+        <div class="card"><h3>Subject: Computer (Class 10)</h3><div class="meta"><div class="tag">Notes</div><div class="tag">Programs</div><div class="tag">PYQ</div></div><div class="list"><div class="item"><div class="check">✓</div><span><a href="downloads/class10_computer_notes.pdf" class="dl-link" data-pick="class10_computer_notes" style="color:inherit;">Concept Notes — basics + examples</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class10_computer_programs.pdf" class="dl-link" data-pick="class10_computer_programs" style="color:inherit;">Programs — practice code</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class10_computer_imp.pdf" class="dl-link" data-pick="class10_computer_imp" style="color:inherit;">Important Questions — exam focus</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class10_computer_pyq.pdf" class="dl-link" data-pick="class10_computer_pyq" style="color:inherit;">Previous Year Qs — practice</a></span></div></div></div>
+
+        <div class="meet">
+          <div>
+            <h3>Live Class Join (Google Meet)</h3>
+            <p>Placeholder meet link. Final meet code replace karein.</p>
+            <div class="btnrow">
+              <a class="btn btn-primary" href="https://meet.google.com/" target="_blank" rel="noopener noreferrer">▶ Join Live Meet</a>
+              <a class="btn btn-ghost" href="contact.html">📞 Batch / Contact</a>
+            </div>
+          </div>
+          <div class="meet-embed"><iframe src="https://meet.google.com/" title="Google Meet" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        </div>
+
+
+      </div>
+    </div>
+
+    <div class="tabpanel" id="tp-11" role="tabpanel" hidden>
+      <div class="grid">
+        <div class="card"><h3>Arts Stream (Class 11)</h3><div class="meta"><div class="tag">Notes</div><div class="tag">Imp Qs</div><div class="tag">PYQ</div></div><div class="list"><div class="item"><div class="check">✓</div><span><a href="downloads/class11_arts_notes.pdf" class="dl-link" data-pick="class11_arts_notes" style="color:inherit;">Subject-wise organized notes</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class11_arts_writing.pdf" class="dl-link" data-pick="class11_arts_writing" style="color:inherit;">Answer writing practice</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class11_arts_imp.pdf" class="dl-link" data-pick="class11_arts_imp" style="color:inherit;">Important questions + revision sets</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class11_arts_pyq.pdf" class="dl-link" data-pick="class11_arts_pyq" style="color:inherit;">Previous year question practice</a></span></div></div></div>
+        <div class="card"><h3>Strategy: Weekly Tests</h3><div class="meta"><div class="tag">Regular Practice</div><div class="tag">Doubt Support</div><div class="tag">Exam Focus</div></div><div class="list"><div class="item"><div class="check">✓</div><span><a href="downloads/class11_arts_tests.pdf" class="dl-link" data-pick="class11_arts_tests" style="color:inherit;">Test + evaluation guidance</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class11_arts_doubts.pdf" class="dl-link" data-pick="class11_arts_doubts" style="color:inherit;">Doubt clearing sessions</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class11_arts_highq.pdf" class="dl-link" data-pick="class11_arts_highq" style="color:inherit;">High-scoring question sets</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class11_arts_revision.pdf" class="dl-link" data-pick="class11_arts_revision" style="color:inherit;">Short notes for revision</a></span></div></div></div>
+
+        <div class="card"><h3>Subject: Hindi (Class 11)</h3><div class="meta"><div class="tag">Notes</div><div class="tag">Important Qs</div><div class="tag">PYQ</div></div><div class="list"><div class="item"><div class="check">✓</div><span><a href="downloads/class11_hindi_notes.pdf" class="dl-link" data-pick="class11_hindi_notes" style="color:inherit;">Lesson Notes — अर्थ + अभ्यास</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class11_hindi_imp.pdf" class="dl-link" data-pick="class11_hindi_imp" style="color:inherit;">Important Questions — exam focus</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class11_hindi_writing.pdf" class="dl-link" data-pick="class11_hindi_writing" style="color:inherit;">Writing Practice — long/short answers</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class11_hindi_pyq.pdf" class="dl-link" data-pick="class11_hindi_pyq" style="color:inherit;">Previous Year Qs — practice</a></span></div></div></div>
+
+        <div class="card"><h3>Subject: English (Class 11)</h3><div class="meta"><div class="tag">Notes</div><div class="tag">Practice</div><div class="tag">PYQ</div></div><div class="list"><div class="item"><div class="check">✓</div><span><a href="downloads/class11_english_notes.pdf" class="dl-link" data-pick="class11_english_notes" style="color:inherit;">Lesson Notes — comprehension + grammar</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class11_english_practice.pdf" class="dl-link" data-pick="class11_english_practice" style="color:inherit;">Practice Set — worksheets</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class11_english_imp.pdf" class="dl-link" data-pick="class11_english_imp" style="color:inherit;">Important Qs — expected questions</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class11_english_pyq.pdf" class="dl-link" data-pick="class11_english_pyq" style="color:inherit;">PYQ — revision practice</a></span></div></div></div>
+
+        <div class="card"><h3>Subject: Computer (Class 11)</h3><div class="meta"><div class="tag">Notes</div><div class="tag">Programs</div><div class="tag">PYQ</div></div><div class="list"><div class="item"><div class="check">✓</div><span><a href="downloads/class11_computer_notes.pdf" class="dl-link" data-pick="class11_computer_notes" style="color:inherit;">Concept Notes — basics + examples</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class11_computer_programs.pdf" class="dl-link" data-pick="class11_computer_programs" style="color:inherit;">Programs — practice code</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class11_computer_imp.pdf" class="dl-link" data-pick="class11_computer_imp" style="color:inherit;">Important Questions — exam focus</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class11_computer_pyq.pdf" class="dl-link" data-pick="class11_computer_pyq" style="color:inherit;">Previous Year Qs — practice</a></span></div></div></div>
+
+        <div class="meet">
+          <div>
+            <h3>Live Class Join (Google Meet)</h3>
+            <p>Meet link replace karein. Admin schedule same page pe update karega.</p>
+            <div class="btnrow">
+              <a class="btn btn-primary" href="https://meet.google.com/" target="_blank" rel="noopener noreferrer">▶ Join Live Meet</a>
+              <a class="btn btn-ghost" href="contact.html">📞 Batch / Contact</a>
+            </div>
+          </div>
+          <div class="meet-embed"><iframe src="https://meet.google.com/" title="Google Meet" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        </div>
+
+
+      </div>
+    </div>
+
+    <div class="tabpanel" id="tp-12" role="tabpanel" hidden>
+      <div class="grid">
+        <div class="card"><h3>Arts Stream (Class 12)</h3><div class="meta"><div class="tag">Notes</div><div class="tag">Books</div><div class="tag">PYQ</div></div><div class="list"><div class="item"><div class="check">✓</div><span><a href="downloads/class12_arts_notes.pdf" class="dl-link" data-pick="class12_arts_notes" style="color:inherit;">Last-year oriented notes + key answers</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class12_arts_imp.pdf" class="dl-link" data-pick="class12_arts_imp" style="color:inherit;">Important questions (exam focus)</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class12_arts_pyq.pdf" class="dl-link" data-pick="class12_arts_pyq" style="color:inherit;">Previous year question sets</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class12_arts_revision.pdf" class="dl-link" data-pick="class12_arts_revision" style="color:inherit;">Revision plan support</a></span></div></div></div>
+
+        <div class="card"><h3>Exam Preparation Toolkit</h3><div class="meta"><div class="tag">Revision</div><div class="tag">Practice</div><div class="tag">Writing</div></div><div class="list"><div class="item"><div class="check">✓</div><span><a href="downloads/class12_arts_toolkit_revision.pdf" class="dl-link" data-pick="class12_arts_toolkit_revision" style="color:inherit;">Unit-wise revision notes</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class12_arts_toolkit_writing.pdf" class="dl-link" data-pick="class12_arts_toolkit_writing" style="color:inherit;">Short &amp; long answer practice</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class12_arts_toolkit_pyq.pdf" class="dl-link" data-pick="class12_arts_toolkit_pyq" style="color:inherit;">PYQ + model answers guidance</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class12_arts_toolkit_tests.pdf" class="dl-link" data-pick="class12_arts_toolkit_tests" style="color:inherit;">Weekly tests results guidance</a></span></div></div></div>
+
+        <div class="card"><h3>Subject: Hindi (Class 12)</h3><div class="meta"><div class="tag">Notes</div><div class="tag">Important Qs</div><div class="tag">PYQ</div></div><div class="list"><div class="item"><div class="check">✓</div><span><a href="downloads/class12_hindi_notes.pdf" class="dl-link" data-pick="class12_hindi_notes" style="color:inherit;">Lesson Notes — meaning + practice</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class12_hindi_imp.pdf" class="dl-link" data-pick="class12_hindi_imp" style="color:inherit;">Important Questions — exam focus</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class12_hindi_writing.pdf" class="dl-link" data-pick="class12_hindi_writing" style="color:inherit;">Writing Practice — long/short answers</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class12_hindi_pyq.pdf" class="dl-link" data-pick="class12_hindi_pyq" style="color:inherit;">Previous Year Qs — practice</a></span></div></div></div>
+
+        <div class="card"><h3>Subject: English (Class 12)</h3><div class="meta"><div class="tag">Notes</div><div class="tag">Practice</div><div class="tag">PYQ</div></div><div class="list"><div class="item"><div class="check">✓</div><span><a href="downloads/class12_english_notes.pdf" class="dl-link" data-pick="class12_english_notes" style="color:inherit;">Lesson Notes — comprehension + grammar</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class12_english_practice.pdf" class="dl-link" data-pick="class12_english_practice" style="color:inherit;">Practice Set — worksheets</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class12_english_imp.pdf" class="dl-link" data-pick="class12_english_imp" style="color:inherit;">Important Qs — expected questions</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class12_english_pyq.pdf" class="dl-link" data-pick="class12_english_pyq" style="color:inherit;">PYQ — revision practice</a></span></div></div></div>
+
+        <div class="card"><h3>Subject: Computer (Class 12)</h3><div class="meta"><div class="tag">Notes</div><div class="tag">Programs</div><div class="tag">PYQ</div></div><div class="list"><div class="item"><div class="check">✓</div><span><a href="downloads/class12_computer_notes.pdf" class="dl-link" data-pick="class12_computer_notes" style="color:inherit;">Concept Notes — basics + examples</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class12_computer_programs.pdf" class="dl-link" data-pick="class12_computer_programs" style="color:inherit;">Programs — practice code</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class12_computer_imp.pdf" class="dl-link" data-pick="class12_computer_imp" style="color:inherit;">Important Questions — exam focus</a></span></div><div class="item"><div class="check">✓</div><span><a href="downloads/class12_computer_pyq.pdf" class="dl-link" data-pick="class12_computer_pyq" style="color:inherit;">Previous Year Qs — practice</a></span></div></div></div>
+
+      <--<div class="meet">
+          <div>
+            <h3>Live Class Join (Google Meet)</h3>
+            <p>Final meet link/admin update required.</p>
+            <div class="btnrow">
+              <a class="btn btn-primary" href="https://meet.google.com/" target="_blank" rel="noopener noreferrer">▶ Join Live Meet</a>
+              <a class="btn btn-ghost" href="contact.html">📞 Batch / Contact</a>
+            </div>
+          </div>
+          <div class="meet-embed"><iframe src="https://meet.google.com/" title="Google Meet" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">
+        <img src="banner.png" alt="logo">
+        <b>ROHIT GENERAL STUDIES</b>
+      </div>
+      <p class="about">Paharpur, Purvi Champaran ki trusted coaching — Class 6th to 12th (study + live guidance) ke liye.</p>
+    </div>
+
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="index.html#templates">Our Batches</a></li>
+        <li><a href="noties.html">Notices</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Study Material</h4>
+      <ul>
+        <li><a href="studymaterial.html">Notes & Books</a></li>
+        <li><a href="studymaterial.html">Important Questions</a></li>
+        <li><a href="studymaterial.html">Previous Year Questions</a></li>
+        <li><a href="studymaterial.html">Live Meet Process</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Visit Us</h4>
+      <div class="contact-line"><span class="ic">📍</span><span>Inarwabhar Laptahan, Near Primary School, Paharpur, Purvi Champaran, Bihar</span></div>
+      <div class="contact-line"><span class="ic">📞</span><span>9341334077, 9507473457</span></div>
+      <div class="map-box">
+        <iframe
+          src="https://www.google.com/maps?q=Paharpur,Purvi+Champaran,Bihar&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 Rohit General Studies — <b>Symbol of Success</b></span>
+    <span>Study Material Hub (Class 8–12)</span>
+  </div>
+</footer>
+
+    <script>
+  // Tabs
+  const tabButtons = document.querySelectorAll('.tabbtn');
+  const panels = document.querySelectorAll('.tabpanel');
+
+  // Mobile menu toggle
+  const mobileBtn = document.querySelector('.mobile-menu-btn');
+  const mobileMenuId = 'mobileMenu';
+  const mobileMenu = document.getElementById(mobileMenuId);
+
+  if (mobileBtn && mobileMenu) {
+    mobileBtn.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      mobileBtn.setAttribute('aria-expanded', String(isOpen));
+      mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        mobileBtn.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.contains(e.target) && e.target !== mobileBtn) {
+        mobileMenu.classList.remove('open');
+        mobileBtn.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+      }
+    });
+  }
+
+
+  function setActiveTab(targetId){
+    tabButtons.forEach(btn => {
+      const selected = btn.getAttribute('aria-controls') === targetId;
+      btn.setAttribute('aria-selected', selected ? 'true' : 'false');
+    });
+    panels.forEach(p => {
+      const show = p.id === targetId;
+      if(show){ p.removeAttribute('hidden'); } else { p.setAttribute('hidden',''); }
+    });
+  }
+
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => setActiveTab(btn.getAttribute('aria-controls')));
+  });
+</script>
+</body>
+</html>
+

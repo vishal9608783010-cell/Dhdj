@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <title>Contact — ROHIT GENERAL STUDIES</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --navy:#0B1F3F;
+      --navy-deep:#071730;
+      --gold:#F2B705;
+      --red:#C81E2C;
+      --cream:#FAF6EC;
+      --paper:#FFFCF5;
+      --ink:#1B2433;
+      --line:rgba(11,31,63,0.12);
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{
+      font-family:'Inter',sans-serif;
+      background:var(--cream);
+      color:var(--ink);
+      overflow-x:hidden;
+    }
+    img{max-width:100%;display:block;}
+    a{text-decoration:none;color:inherit;}
+    ul{list-style:none;}
+
+    h1,h2,h3{font-family:'Archivo Black',sans-serif;}
+
+    /* Header */
+    header{
+      background:linear-gradient(180deg,var(--navy-deep),var(--navy) 70%);
+      color:#fff;
+      position:sticky;
+      top:0;
+      z-index:100;
+      box-shadow:0 2px 18px rgba(0,0,0,.25);
+    }
+    .topbar{
+      max-width:1240px;
+      margin:0 auto;
+      padding:14px 24px;
+      display:flex;
+      align-items:center;
+      gap:18px;
+    }
+    .logo-wrap{
+      width:58px;height:58px;border-radius:50%;
+      flex-shrink:0;
+      border:2px solid var(--gold);
+      overflow:hidden;
+      background:#fff;
+    }
+    .logo-wrap img{width:100%;height:100%;object-fit:cover;}
+    .brand-name{
+      font-family:'Archivo Black',sans-serif;
+      font-size:clamp(1.25rem,3vw,1.9rem);
+      line-height:1.05;
+      letter-spacing:.01em;
+    }
+    .brand-name span{color:var(--gold);}
+    .brand-sub{
+      font-family:'Caveat',cursive;
+      font-weight:700;
+      color:#9fd8e0;
+      font-size:1rem;
+      margin-top:2px;
+    }
+    nav.desktop-nav{
+      margin-left:auto;
+      display:flex;
+      gap:28px;
+      font-weight:600;
+      font-size:.92rem;
+    }
+    nav.desktop-nav a{
+      position:relative;
+      padding:4px 0;
+      opacity:.92;
+      text-transform:lowercase;
+    }
+    nav.desktop-nav a::after{
+      content:"";
+      position:absolute;left:0;bottom:-4px;
+      width:0%;height:2px;background:var(--gold);
+      transition:width .25s ease;
+    }
+    nav.desktop-nav a:hover::after{width:100%;}
+
+    .tagline-strip{
+      background:var(--gold);
+      color:var(--navy-deep);
+      overflow:hidden;
+      white-space:nowrap;
+      border-top:1px solid rgba(0,0,0,.08);
+      border-bottom:2px solid var(--navy-deep);
+    }
+    .tagline-track{
+      display:inline-block;
+      padding-left:100%;
+      animation:scrollLeftRight 44s linear infinite;
+      font-weight:700;
+      font-size:.85rem;
+      letter-spacing:.03em;
+      padding-top:6px;padding-bottom:6px;
+    }
+    .tagline-track span{margin:0 28px;}
+    @keyframes scrollLeftRight{
+      0%{transform:translateX(0);}
+      100%{transform:translateX(-100%);}
+    }
+
+    .mobile-menu-btn{
+      display:none;
+      margin-left:auto;
+      width:44px;
+      height:44px;
+      border:1px solid rgba(255,255,255,.35);
+      background:rgba(255,255,255,.08);
+      border-radius:12px;
+      cursor:pointer;
+      position:relative;
+    }
+    .mobile-menu-btn span{
+      position:absolute;
+      left:11px;
+      right:11px;
+      height:3px;
+      background:var(--gold);
+      border-radius:4px;
+      transition:transform .2s ease, top .2s ease, opacity .2s ease;
+    }
+    .mobile-menu-btn span:nth-child(1){ top:14px; }
+    .mobile-menu-btn span:nth-child(2){ top:20px; }
+    .mobile-menu-btn span:nth-child(3){ top:26px; }
+
+    .mobile-menu{
+      display:none;
+      position:absolute;
+      top:82px;
+      left:0;
+      right:0;
+      background:rgba(7,23,48,.98);
+      border-top:1px solid rgba(255,255,255,.18);
+      padding:12px 18px 18px;
+      z-index:120;
+      box-shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    .mobile-menu-link{
+      display:block;
+      padding:12px 10px;
+      border-radius:12px;
+      font-weight:800;
+      color:#fff;
+      border:1px solid transparent;
+      text-transform:lowercase;
+    }
+    .mobile-menu-link:active{transform:scale(.99);}
+    .mobile-menu-link:hover{border-color:rgba(242,183,5,.45);background:rgba(242,183,5,.12);}
+    .mobile-menu.open{display:block;}
+
+    @media(max-width:600px){
+      nav.desktop-nav{display:none;}
+      .mobile-menu-btn{display:block;}
+    }
+
+    /* Hero */
+    .hero{
+      background:
+        radial-gradient(circle at 80% 20%, rgba(242,183,5,.18), transparent 45%),
+        linear-gradient(160deg,var(--navy-deep) 0%, var(--navy) 55%, #0d2548 100%);
+      color:#fff;
+      padding:56px 24px 56px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image:
+        repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px, transparent 1px 28px),
+        repeating-linear-gradient(90deg,rgba(255,255,255,.025) 0 1px, transparent 1px 28px);
+      pointer-events:none;
+    }
+    .hero-inner{
+      max-width:1240px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:1.1fr 0.9fr;
+      gap:34px;
+      align-items:center;
+      position:relative;
+    }
+    .hero-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.25);
+      padding:6px 14px;
+      border-radius:30px;
+      font-size:.78rem;
+      font-weight:700;
+      letter-spacing:.05em;
+      margin-bottom:18px;
+    }
+    .hero-badge .dot{width:7px;height:7px;border-radius:50%;background:#3CE07A;animation:pulse 1.6s infinite;}
+    @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
+
+    .hero h1{font-size:clamp(2.1rem,4.2vw,3rem);line-height:1.06;margin-bottom:14px;}
+    .hero p.lead{font-size:1.02rem;color:#cfd9ec;max-width:580px;line-height:1.7;margin-bottom:22px;}
+
+    .hero-ctas{display:flex;gap:12px;flex-wrap:wrap;}
+    .btn-primary{
+      background:var(--gold);
+      color:var(--navy-deep);
+      font-weight:800;
+      padding:12px 22px;
+      border-radius:10px;
+      box-shadow:0 4px 0 #b58300;
+      font-size:.95rem;
+      border:0;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+    }
+    .btn-ghost{
+      background:transparent;
+      border:2px solid rgba(255,255,255,.38);
+      color:#fff;
+      font-weight:700;
+      padding:10px 18px;
+      border-radius:10px;
+      font-size:.95rem;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+    }
+
+    .hero-photo{position:relative;justify-self:center;}
+    .hero-photo img{
+      width:270px;
+      border-radius:18px;
+      border:4px solid var(--gold);
+      box-shadow:0 20px 50px rgba(0,0,0,.45);
+      position:relative;
+    }
+    .hero-photo .ring{
+      position:absolute;
+      inset:-16px;
+      border:2px dashed rgba(242,183,5,.5);
+      border-radius:24px;
+      animation:spin 30s linear infinite;
+    }
+    @keyframes spin{to{transform:rotate(360deg);}}
+    .hero-photo .tag{
+      position:absolute;
+      bottom:-14px;left:50%;
+      transform:translateX(-50%);
+      background:var(--navy-deep);
+      border:1px solid var(--gold);
+      padding:8px 16px;
+      border-radius:30px;
+      font-size:.82rem;
+      font-weight:700;
+      white-space:nowrap;
+    }
+
+    @media(max-width:980px){
+      .hero-inner{grid-template-columns:1fr;}
+      .hero-photo{order:-1;}
+    }
+
+    /* Content */
+    .content{
+      max-width:1240px;
+      margin:0 auto;
+      padding:26px 24px 70px;
+    }
+
+    .grid-2{display:grid;grid-template-columns:1.05fr 0.95fr;gap:22px;align-items:start;}
+
+    .card{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:22px;
+      box-shadow:0 8px 28px rgba(11,31,63,.06);
+      overflow:hidden;
+    }
+    .card-head{padding:22px 22px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,rgba(242,183,5,.18),transparent);}
+    .card-head h2{color:var(--navy-deep);font-size:clamp(1.4rem,2.8vw,1.95rem);}
+    .card-head p{color:#5a6478;line-height:1.7;margin-top:8px;}
+
+    .info-grid{padding:20px 22px;display:grid;grid-template-columns:1fr;gap:14px;}
+    .info-item{
+      display:flex;gap:12px;align-items:flex-start;
+      padding:14px 14px;border:1px solid var(--line);
+      border-radius:16px;background:#fff;
+    }
+    .info-ic{
+      width:40px;height:40px;border-radius:14px;
+      background:rgba(242,183,5,.2);
+      border:1px solid rgba(242,183,5,.35);
+      display:flex;align-items:center;justify-content:center;
+      font-size:1.1rem;
+      flex-shrink:0;
+      color:var(--navy-deep);
+    }
+    .info-item b{display:block;color:var(--navy-deep);font-size:1rem;margin-bottom:2px;}
+    .info-item span{color:#5a6478;line-height:1.6;font-size:.95rem;}
+
+    .form-wrap{padding:18px 22px 22px;}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+    .field{display:flex;flex-direction:column;gap:8px;margin-bottom:12px;}
+    .field label{font-weight:900;color:var(--navy-deep);font-size:.9rem;}
+    .field input,.field select,.field textarea{
+      width:100%;padding:12px 12px;
+      border:1px solid var(--line);
+      border-radius:14px;background:#fff;color:var(--ink);
+      outline:none;font-size:.95rem;
+    }
+    .field textarea{min-height:110px;resize:vertical;}
+
+    .form-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;}
+    .btn-secondary{
+      background:transparent;
+      border:1.8px solid rgba(11,31,63,.18);
+      color:var(--navy-deep);
+      font-weight:900;
+      border-radius:12px;
+      padding:11px 16px;
+      cursor:pointer;
+      font-size:.95rem;
+    }
+
+    .map-wrap{padding:14px 14px 16px;}
+    .map-box{border-radius:18px;overflow:hidden;border:1px solid var(--line);}
+    .map-box iframe{width:100%;height:260px;border:0;display:block;}
+
+    @media(max-width:980px){
+      .grid-2{grid-template-columns:1fr;}
+      .footer-grid{grid-template-columns:1fr 1fr;}
+    }
+    @media(max-width:700px){
+      .form-grid{grid-template-columns:1fr;}
+    }
+    @media(max-width:600px){
+      .footer-grid{grid-template-columns:1fr;}
+      .content{padding-left:16px;padding-right:16px;}
+    }
+
+    /* Footer */
+    footer{
+      background:var(--navy-deep);
+      color:#cfd9ec;
+      padding:60px 24px 0;
+    }
+    .footer-grid{
+      max-width:1240px;margin:0 auto;
+      display:grid;
+      grid-template-columns:1.1fr 1fr 1fr 1.3fr;
+      gap:36px;
+      padding-bottom:40px;
+      border-bottom:1px solid rgba(255,255,255,.1);
+    }
+    .footer-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+    .footer-brand img{width:50px;height:50px;border-radius:50%;border:2px solid var(--gold);}
+    .footer-brand b{font-family:'Archivo Black';font-size:1.05rem;color:#fff;}
+    footer p.about{font-size:.86rem;line-height:1.6;color:#9fb0d1;}
+    footer h4{color:#fff;font-size:.92rem;letter-spacing:.04em;text-transform:uppercase;margin-bottom:16px;}
+    footer ul li{margin-bottom:10px;font-size:.86rem;}
+    footer ul li a:hover{color:var(--gold);}
+    .contact-line{display:flex;gap:10px;margin-bottom:14px;font-size:.86rem;align-items:flex-start;}
+    .contact-line .ic{color:var(--gold);font-size:1rem;margin-top:2px;}
+    .map-box-footer{border-radius:12px;overflow:hidden;border:2px solid rgba(255,255,255,.12);margin-top:8px;}
+    .map-box-footer iframe{width:100%;height:170px;border:0;display:block;filter:grayscale(.15) contrast(1.05);}
+
+    .footer-bottom{
+      max-width:1240px;margin:0 auto;
+      padding:20px 0 26px;
+      display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+      font-size:.78rem;color:#8194b8;
+    }
+    .footer-bottom b{color:var(--gold);}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="topbar">
+    <div class="logo-wrap"><img src="lobo.png" alt="Rohit General Studies Logo"></div>
+    <div>
+      <div class="brand-name">ROHIT <span>GENERAL</span> STUDIES</div>
+      <div class="brand-sub">Symbol of Success</div>
+    </div>
+
+    <nav class="desktop-nav">
+      <a href="index.html">home</a>
+      <a href="about-us.html">About us</a>
+      <a href="#templates">servicess</a>
+      <a href="noties.html">Notices</a>
+      <a href="contact.html">Contact</a>
+      <a href="studymaterial.html">study material</a>
+    </nav>
+
+    <button class="mobile-menu-btn" type="button" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="index.html" class="mobile-menu-link">home</a>
+    <a href="about-us.html" class="mobile-menu-link">About us</a>
+    <a href="#templates" class="mobile-menu-link">servicess</a>
+    <a href="noties.html" class="mobile-menu-link">Notices</a>
+    <a href="contact.html" class="mobile-menu-link">Contact</a>
+    <a href="studymaterial.html" class="mobile-menu-link">study material</a>
+  </div>
+
+  <div class="tagline-strip">
+    <div class="tagline-track">
+      <span>★ ROHIT GENERAL STUDIES — Inarwabhar Laptahan, Near Primary School, Paharpur, Purvi Champaran, Bihar</span>
+      <span>★ Class 6th to 12th ke liye sabhi vishayon ki guidance, Computer Foundation Batch ke saath</span>
+      <span>★ Practical & Theory Classes • Individual Attention • Affordable Fees • Certificate Provided</span>
+      <span>★ Admission Open 2026 — Seats Limited, Aaj hi Sampark Karein: 9341334077 / 9507473457</span>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="contact">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge"><span class="dot"></span> Contact Us — Admission & Enquiry</div>
+      <h1>Sampark Karein,<br>hum jawab denge <span style="color:var(--gold);">turant</span></h1>
+      <p class="lead">Admission (Class 6th–12th) aur batch details ke liye phone / form dono se enquiry kar sakte hain. Office timing: 3:00 PM onwards.</p>
+      <div class="hero-ctas">
+        <a class="btn-primary" href="tel:9341334077">📞 Call Now →</a>
+        <a class="btn-ghost" href="#enquiryForm">✉️ Send Enquiry</a>
+      </div>
+    </div>
+
+    <div class="hero-photo">
+      <div class="ring"></div>
+      <img src="lobo.png" alt="Rohit General Studies" />
+      <div class="tag">ROHIT SIR — Founder & Director</div>
+    </div>
+  </div>
+</section>
+
+<main class="content">
+  <div class="grid-2">
+    <section class="card" aria-labelledby="contactInfoTitle">
+      <div class="card-head">
+        <h2 id="contactInfoTitle">Direct Contact</h2>
+        <p>Fast response ke liye phone call ya details form.</p>
+      </div>
+
+      <div class="info-grid">
+        <div class="info-item">
+          <div class="info-ic">📞</div>
+          <div>
+            <b>Phone</b>
+            <span><a href="tel:9341334077">9341334077</a> , <a href="tel:9507473457">9507473457</a></span>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-ic">📍</div>
+          <div>
+            <b>Address</b>
+            <span>Inarwabhar Laptahan, Near Primary School, Paharpur, Purvi Champaran, Bihar</span>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-ic">🕒</div>
+          <div>
+            <b>Timing</b>
+            <span>3:00 PM onwards (Daily)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="enquiryForm" aria-labelledby="formTitle">
+      <div class="card-head">
+        <h2 id="formTitle">Enquiry Form</h2>
+        <p>Submit se aapke details se email draft banega.</p>
+      </div>
+
+      <div class="form-wrap">
+        <form id="contactForm" onsubmit="return handleSubmit(event)" action="#">
+          <div class="form-grid">
+            <div class="field">
+              <label for="name">Student/Parent Name</label>
+              <input id="name" name="name" type="text" placeholder="Enter name" required />
+            </div>
+
+            <div class="field">
+              <label for="className">Class</label>
+              <select id="className" name="className" required>
+                <option value="">Select class</option>
+                <option>6th</option><option>7th</option><option>8th</option>
+                <option>9th</option><option>10th</option><option>11th</option><option>12th</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" inputmode="numeric" placeholder="Enter mobile number" required />
+            </div>
+
+            <div class="field">
+              <label for="board">Board</label>
+              <select id="board" name="board" required>
+                <option value="">Select board</option>
+                <option>Bihar Board</option>
+                <option>CBSE</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Admission / Batch / Fees / Timing related query" required></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn-primary" type="submit">Submit Enquiry →</button>
+            <button class="btn-secondary" type="reset">Reset</button>
+          </div>
+
+          <p style="margin-top:10px;color:#6b768a;font-size:.9rem;line-height:1.5;">
+            Note: Submit ke baad email draft open hoga. (Backend integration nahi hai, isliye yahan mailto use hua hai.)
+          </p>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <section class="card" style="margin-top:22px;">
+    <div class="card-head">
+      <h2>Map & Location</h2>
+      <p>Google map par exact location check karein.</p>
+    </div>
+    <div class="map-wrap">
+      <div class="map-box">
+        <iframe
+          src="https://www.google.com/maps?q=Paharpur,Purvi+Champaran,Bihar&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Rohit General Studies Location">
+        </iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">
+        <img src="banner.png" alt="logo">
+        <b>ROHIT GENERAL STUDIES</b>
+      </div>
+      <p class="about">Inarwabhar Laptahan ki ek vishwasniya coaching sansthan, Rohit Sir ke netritva mein — jahan har vidyarthi ko apna sapna poora karne ki sahi disha milti hai.</p>
+    </div>
+
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="noties.html">Notices</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Our Batches</h4>
+      <ul>
+        <li><a href="index.html#templates">Computer Foundation Batch</a></li>
+        <li><a href="index.html#templates">Class 6th – 8th</a></li>
+        <li><a href="index.html#templates">Class 9th – 10th</a></li>
+        <li><a href="index.html#templates">Class 11th – 12th</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Visit Us</h4>
+      <div class="contact-line"><span class="ic">📍</span><span>Inarwabhar Laptahan, Near Primary School, Paharpur, Purvi Champaran, Bihar</span></div>
+      <div class="contact-line"><span class="ic">📞</span><span>9341334077, 9507473457</span></div>
+      <div class="map-box-footer">
+        <iframe
+          src="https://www.google.com/maps?q=Paharpur,Purvi+Champaran,Bihar&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 Rohit General Studies — <b>Symbol of Success</b></span>
+    <span>Designed for Digital Skills &amp; A Better Future</span>
+  </div>
+</footer>
+
+<script>
+  // mobile menu toggle
+  const mobileBtn = document.querySelector('.mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  if (mobileBtn && mobileMenu) {
+    mobileBtn.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      mobileBtn.setAttribute('aria-expanded', String(isOpen));
+      mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+    });
+
+    mobileMenu.querySelectorAll('.mobile-menu-link').forEach(a => {
+      a.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        mobileBtn.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.contains(e.target) && e.target !== mobileBtn) {
+        mobileMenu.classList.remove('open');
+        mobileBtn.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+      }
+    });
+  }
+
+  // contact form submit -> mailto draft
+  function handleSubmit(event){
+    event.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const className = document.getElementById('className').value;
+    const phone = document.getElementById('phone').value.trim();
+    const board = document.getElementById('board').value;
+    const message = document.getElementById('message').value.trim();
+
+    const to = 'rohitsir@example.com';
+    const subject = `RGS Enquiry — ${className} (${board})`;
+
+    const body =
+      `Namaste Rohit General Studies,\n\n` +
+      `Name: ${name}\n` +
+      `Class: ${className}\n` +
+      `Board: ${board}\n` +
+      `Phone: ${phone}\n\n` +
+      `Message: ${message}\n\n` +
+      `— Sent from contact.html`;
+
+    window.location.href = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    return false;
+  }
+</script>
+
+</body>
+</html>
+
